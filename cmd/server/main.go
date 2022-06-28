@@ -59,5 +59,10 @@ func main() {
 	})
 
 	AuthRoutes.AuthRoute(router)
+
+	server.NoRoute(func(ctx *gin.Context) {
+		ctx.JSON(http.StatusNotFound, gin.H{"status": "fail", "message": fmt.Sprintf("Route %s not found", ctx.Request.URL)})
+	})
+
 	log.Fatal(server.Run(":" + config.Port))
 }
