@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"database/sql"
 	"fmt"
 	"log"
@@ -18,12 +19,14 @@ import (
 var (
 	server *gin.Engine
 	db     *dbConn.Queries
+	ctx    context.Context
 
 	AuthController controllers.AuthController
 	AuthRoutes     routes.AuthRoutes
 )
 
 func init() {
+	ctx = context.TODO()
 	config, err := config.LoadConfig(".")
 
 	if err != nil {
@@ -39,8 +42,8 @@ func init() {
 
 	fmt.Println("PostgreSQL connected successfully...")
 
-	AuthController = *controllers.NewAuthController(db)
-	AuthRoutes = routes.NewAuthRoutes(AuthController)
+	AuthController = *controllers.NewAuthController(db, ctx)
+	AuthRoutes = routes.NewAuthRoutes(AuthController, db)
 
 	server = gin.Default()
 }
@@ -59,5 +62,9 @@ func main() {
 	})
 
 	AuthRoutes.AuthRoute(router)
+
+	server.NoRoute(func(ctx *gin.Context) {
+		ctx.JSON(http.StatusNotFound, gin.H{"status": "fail", "message": fmt.Sprintf("Route %s not found", ctx.Request.URL)})
+	})
 	log.Fatal(server.Run(":" + config.Port))
 }
