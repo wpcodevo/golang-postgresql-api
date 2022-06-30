@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/wpcodevo/golang-postgresql-grpc/config"
 	"github.com/wpcodevo/golang-postgresql-grpc/controllers"
@@ -22,7 +23,9 @@ var (
 	ctx    context.Context
 
 	AuthController controllers.AuthController
+	UserController controllers.UserController
 	AuthRoutes     routes.AuthRoutes
+	UserRoutes     routes.UserRoutes
 )
 
 func init() {
@@ -43,7 +46,9 @@ func init() {
 	fmt.Println("PostgreSQL connected successfully...")
 
 	AuthController = *controllers.NewAuthController(db, ctx)
+	UserController = controllers.NewUserController(db, ctx)
 	AuthRoutes = routes.NewAuthRoutes(AuthController, db)
+	UserRoutes = routes.NewUserRoutes(UserController, db)
 
 	server = gin.Default()
 }
@@ -55,6 +60,12 @@ func main() {
 		log.Fatalf("could not load config: %v", err)
 	}
 
+	corsConfig := cors.DefaultConfig()
+	corsConfig.AllowOrigins = []string{config.Origin}
+	corsConfig.AllowCredentials = true
+
+	server.Use(cors.New(corsConfig))
+
 	router := server.Group("/api")
 
 	router.GET("/healthchecker", func(ctx *gin.Context) {
@@ -62,6 +73,7 @@ func main() {
 	})
 
 	AuthRoutes.AuthRoute(router)
+	UserRoutes.UserRoute(router)
 
 	server.NoRoute(func(ctx *gin.Context) {
 		ctx.JSON(http.StatusNotFound, gin.H{"status": "fail", "message": fmt.Sprintf("Route %s not found", ctx.Request.URL)})

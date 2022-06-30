@@ -12,6 +12,8 @@ type Config struct {
 
 	Port string `mapstructure:"PORT"`
 
+	Origin string `mapstructure:"ORIGIN"`
+
 	AccessTokenPrivateKey  string        `mapstructure:"ACCESS_TOKEN_PRIVATE_KEY"`
 	AccessTokenPublicKey   string        `mapstructure:"ACCESS_TOKEN_PUBLIC_KEY"`
 	RefreshTokenPrivateKey string        `mapstructure:"REFRESH_TOKEN_PRIVATE_KEY"`

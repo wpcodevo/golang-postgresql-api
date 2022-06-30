@@ -22,7 +22,7 @@ type UserResponse struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-func FilteredResponse(user *db.User) UserResponse {
+func FilteredResponse(user db.User) UserResponse {
 	return UserResponse{
 		ID:        user.ID.String(),
 		Email:     user.Email,
