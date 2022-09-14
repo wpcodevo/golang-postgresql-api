@@ -1,4 +1,4 @@
-module github.com/wpcodevo/golang-postgresql-grpc
+module github.com/wpcodevo/golang-postgresql-api
 
 go 1.18
 
