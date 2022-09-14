@@ -2,9 +2,9 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/wpcodevo/golang-postgresql-grpc/controllers"
-	db "github.com/wpcodevo/golang-postgresql-grpc/db/sqlc"
-	"github.com/wpcodevo/golang-postgresql-grpc/middleware"
+	"github.com/wpcodevo/golang-postgresql-api/controllers"
+	db "github.com/wpcodevo/golang-postgresql-api/db/sqlc"
+	"github.com/wpcodevo/golang-postgresql-api/middleware"
 )
 
 type UserRoutes struct {

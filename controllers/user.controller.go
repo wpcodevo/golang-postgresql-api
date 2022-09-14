@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	db "github.com/wpcodevo/golang-postgresql-grpc/db/sqlc"
-	"github.com/wpcodevo/golang-postgresql-grpc/models"
+	db "github.com/wpcodevo/golang-postgresql-api/db/sqlc"
+	"github.com/wpcodevo/golang-postgresql-api/models"
 )
 
 type UserController struct {

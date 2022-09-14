@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	db "github.com/wpcodevo/golang-postgresql-grpc/db/sqlc"
+	db "github.com/wpcodevo/golang-postgresql-api/db/sqlc"
 )
 
 // 👈 SignInInput struct

@@ -8,10 +8,10 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"github.com/wpcodevo/golang-postgresql-grpc/config"
-	db "github.com/wpcodevo/golang-postgresql-grpc/db/sqlc"
-	"github.com/wpcodevo/golang-postgresql-grpc/models"
-	"github.com/wpcodevo/golang-postgresql-grpc/utils"
+	"github.com/wpcodevo/golang-postgresql-api/config"
+	db "github.com/wpcodevo/golang-postgresql-api/db/sqlc"
+	"github.com/wpcodevo/golang-postgresql-api/models"
+	"github.com/wpcodevo/golang-postgresql-api/utils"
 )
 
 type AuthController struct {

@@ -9,10 +9,10 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/wpcodevo/golang-postgresql-grpc/config"
-	"github.com/wpcodevo/golang-postgresql-grpc/controllers"
-	dbConn "github.com/wpcodevo/golang-postgresql-grpc/db/sqlc"
-	"github.com/wpcodevo/golang-postgresql-grpc/routes"
+	"github.com/wpcodevo/golang-postgresql-api/config"
+	"github.com/wpcodevo/golang-postgresql-api/controllers"
+	dbConn "github.com/wpcodevo/golang-postgresql-api/db/sqlc"
+	"github.com/wpcodevo/golang-postgresql-api/routes"
 
 	_ "github.com/lib/pq"
 )
