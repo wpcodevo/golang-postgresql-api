@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/wpcodevo/golang-postgresql-grpc/controllers"
+	"github.com/wpcodevo/golang-postgresql-api/controllers"
 )
 
 type AuthRoutes struct {

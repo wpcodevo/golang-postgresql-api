@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	db "github.com/wpcodevo/golang-postgresql-grpc/db/sqlc"
-	"github.com/wpcodevo/golang-postgresql-grpc/utils"
+	db "github.com/wpcodevo/golang-postgresql-api/db/sqlc"
+	"github.com/wpcodevo/golang-postgresql-api/utils"
 )
 
 type AuthController struct {
