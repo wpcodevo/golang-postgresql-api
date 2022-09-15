@@ -10,9 +10,7 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/wpcodevo/golang-postgresql-api/config"
-	"github.com/wpcodevo/golang-postgresql-api/controllers"
 	dbConn "github.com/wpcodevo/golang-postgresql-api/db/sqlc"
-	"github.com/wpcodevo/golang-postgresql-api/routes"
 
 	_ "github.com/lib/pq"
 )
@@ -21,11 +19,6 @@ var (
 	server *gin.Engine
 	db     *dbConn.Queries
 	ctx    context.Context
-
-	AuthController controllers.AuthController
-	UserController controllers.UserController
-	AuthRoutes     routes.AuthRoutes
-	UserRoutes     routes.UserRoutes
 )
 
 func init() {
@@ -44,11 +37,6 @@ func init() {
 	db = dbConn.New(conn)
 
 	fmt.Println("PostgreSQL connected successfully...")
-
-	AuthController = *controllers.NewAuthController(db, ctx)
-	UserController = controllers.NewUserController(db, ctx)
-	AuthRoutes = routes.NewAuthRoutes(AuthController, db)
-	UserRoutes = routes.NewUserRoutes(UserController, db)
 
 	server = gin.Default()
 }
@@ -72,11 +60,8 @@ func main() {
 		ctx.JSON(http.StatusOK, gin.H{"status": "success", "message": "Welcome to Golang with PostgreSQL"})
 	})
 
-	AuthRoutes.AuthRoute(router)
-	UserRoutes.UserRoute(router)
-
 	server.NoRoute(func(ctx *gin.Context) {
 		ctx.JSON(http.StatusNotFound, gin.H{"status": "fail", "message": fmt.Sprintf("Route %s not found", ctx.Request.URL)})
 	})
-	log.Fatal(server.Run(":" + config.Port))
+	log.Fatal(server.Run(":" + config.ServerPort))
 }
