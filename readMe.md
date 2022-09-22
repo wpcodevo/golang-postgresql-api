@@ -6,5 +6,5 @@
 ### 2. Build Golang & PostgreSQL API: JWT Access and Refresh Tokens
 [Build Golang & PostgreSQL API: JWT Access and Refresh Tokens](https://codevoweb.com/golang-postgresql-api-access-and-refresh-tokens)
 
-### 2. Golang CRUD RESTful API with SQLC and PostgreSQL
+### 3. Golang CRUD RESTful API with SQLC and PostgreSQL
 [Golang CRUD RESTful API with SQLC and PostgreSQL](https://codevoweb.com/golang-crud-restful-api-with-sqlc-and-postgresql)
