@@ -10,7 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	db "github.com/wpcodevo/golang-postgresql-api/db/sqlc"
-	"github.com/wpcodevo/golang-postgresql-api/models"
+	"github.com/wpcodevo/golang-postgresql-api/schemas"
 )
 
 type PostController struct {
@@ -23,7 +23,7 @@ func NewPostController(db *db.Queries, ctx context.Context) *PostController {
 }
 
 func (ac *PostController) CreatePost(ctx *gin.Context) {
-	var payload *models.CreatePost
+	var payload *schemas.CreatePost
 
 	if err := ctx.ShouldBindJSON(&payload); err != nil {
 		ctx.JSON(http.StatusBadRequest, gin.H{"status": "fail", "message": err.Error()})
@@ -51,7 +51,7 @@ func (ac *PostController) CreatePost(ctx *gin.Context) {
 }
 
 func (ac *PostController) UpdatePost(ctx *gin.Context) {
-	var payload *models.UpdatePost
+	var payload *schemas.UpdatePost
 	postId := ctx.Param("postId")
 
 	if err := ctx.ShouldBindJSON(&payload); err != nil {

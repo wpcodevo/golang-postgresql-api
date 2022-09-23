@@ -1,4 +1,4 @@
-package models
+package schemas
 
 type CreatePost struct {
 	Title    string `json:"title" binding:"required"`
