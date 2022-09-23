@@ -1,5 +1,6 @@
 # alias sqlc='$(go env GOPATH)/bin/sqlc'
 # alias air='$(go env GOPATH)/bin/air'
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 dev:
 	docker-compose up -d
