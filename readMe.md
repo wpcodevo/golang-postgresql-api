@@ -1,8 +1,8 @@
 # How to Setup SQLC CRUD API with Golang and Gin Gonic
 
-![How to Setup SQLC CRUD API with Golang and Gin Gonic](https://codevoweb.com/wp-content/uploads/2022/06/How-to-Setup-SQLC-CRUD-API-with-Golang-and-Gin-Gonic.webp)
-
 This article will teach you how to set up a SQLC API project with Golang, standard Database/SQL package, Gin Gonic, PostgreSQL, Golang-migrate, and Docker-compose. You will also learn how to generate Golang database CRUD functions and Structs with the SQLC compiler. The SQLC Golang API will use a PostgreSQL database and run on the Gin Gonic HTTP server. We will use the Golang-migrate package to push the SQL schema to the database.
+
+![How to Setup SQLC CRUD API with Golang and Gin Gonic](https://codevoweb.com/wp-content/uploads/2022/06/How-to-Setup-SQLC-CRUD-API-with-Golang-and-Gin-Gonic.webp)
 
 ## Topics Covered
 
