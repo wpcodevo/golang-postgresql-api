@@ -1,8 +1,8 @@
 # Golang, SQLC, and PostgreSQL: JWT Access & Refresh Tokens
 
-![Golang, SQLC, and PostgreSQL: JWT Access & Refresh Tokens](https://codevoweb.com/wp-content/uploads/2022/06/Build-Golang-PostgreSQL-API-JWT-Access-and-Refresh-Tokens.webp)
-
 This article will teach you how to use the RS256 algorithm to implement JSON Web Token (JWT) Authentication and Authorization with Golang, Gin Gonic, SQLC, PostgreSQL, and Docker-compose. Also, you will learn how to use asymmetric encryption (private and public keys) to generate access and refresh JWTs in Golang.
+
+![Golang, SQLC, and PostgreSQL: JWT Access & Refresh Tokens](https://codevoweb.com/wp-content/uploads/2022/06/Build-Golang-PostgreSQL-API-JWT-Access-and-Refresh-Tokens.webp)
 
 ## Topics Covered
 
