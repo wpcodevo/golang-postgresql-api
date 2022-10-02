@@ -1,8 +1,8 @@
 # Golang CRUD RESTful API with SQLC and PostgreSQL
 
-![Golang CRUD RESTful API with SQLC and PostgreSQL](https://codevoweb.com/wp-content/uploads/2022/09/Golang-CRUD-RESTful-API-with-SQLC-and-PostgreSQL.webp)
-
 This article will teach you how to build a CRUD RESTful API in Golang that runs on a Gonic Gonic framework and uses a PostgreSQL database. Also, you will learn how to generate the CRUD Functions and Structs with SQLC. We will run the database migration with the Golang migrate library.
+
+![Golang CRUD RESTful API with SQLC and PostgreSQL](https://codevoweb.com/wp-content/uploads/2022/09/Golang-CRUD-RESTful-API-with-SQLC-and-PostgreSQL.webp)
 
 ## Topics Covered
 
